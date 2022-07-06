@@ -1,7 +1,7 @@
 <template>
   <!-- if the loading is false, then render this -->
   <main  v-if="!loading" class="home">
-    Show Data
+    <DataTitle :text="title" :dataDate="dataDate" />
   </main>
 
   <main v-else class="flex flex-col align-center justify-center text-center">
