@@ -2,6 +2,8 @@
   <!-- if the loading is false, then render this -->
   <main  v-if="!loading" class="home">
     <DataTitle :text="title" :dataDate="dataDate" />
+
+    <DataBoxes :stats="stats" />
   </main>
 
   <main v-else class="flex flex-col align-center justify-center text-center">
@@ -18,11 +20,13 @@
 
 <script>
   import DataTitle from '../components/DataTitle.vue'
+  import DataBoxes from '../components/DataBoxes.vue'
 
   export default {
    name: 'HomeView',
    components: {
-    DataTitle
+    DataTitle,
+    DataBoxes
    },
    data(){
      //these are all your variables/STATE
