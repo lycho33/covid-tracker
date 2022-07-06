@@ -17,9 +17,13 @@
 
 
 <script>
+  import DataTitle from '../components/DataTitle.vue'
+
   export default {
    name: 'HomeView',
-   components: {},
+   components: {
+    DataTitle
+   },
    data(){
      //these are all your variables/STATE
      return {
