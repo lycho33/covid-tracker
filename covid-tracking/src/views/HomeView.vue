@@ -4,6 +4,8 @@
     <DataTitle :text="title" :dataDate="dataDate" />
 
     <DataBoxes :stats="stats" />
+
+    <CountrySelect :countries="countries" />
   </main>
 
   <main v-else class="flex flex-col align-center justify-center text-center">
@@ -27,7 +29,7 @@
    components: {
     DataTitle,
     DataBoxes,
-    CountrySelect
+    CountrySelect,
    },
    data(){
      //these are all your variables/STATE

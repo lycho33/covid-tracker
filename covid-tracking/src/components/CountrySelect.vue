@@ -1,10 +1,15 @@
 <template>
-    <h3>Select</h3>
+    <select v-model="selected"></select>
 </template>
 
 <script>
 export default {
     name: 'CountrySelect',
-    props: ['countries']
+    props: ['countries'],
+    data(){
+        return{
+            selected: 0
+        }
+    }
 }
 </script>
