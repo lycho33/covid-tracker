@@ -5,7 +5,7 @@
 
     <DataBoxes :stats="stats" />
 
-    <CountrySelect :countries="countries" />
+    <CountrySelect @get-country="getCountryData" :countries="countries" />
   </main>
 
   <main v-else class="flex flex-col align-center justify-center text-center">
@@ -48,6 +48,10 @@
        const data = await res.json()
        console.log(data)
        return data
+     },
+     getCountryData(country){
+      this.stats = country 
+      this.title = country.Country
      }
    },
    //runs before the Virtual DOM is mounted and after the component is intialized 
