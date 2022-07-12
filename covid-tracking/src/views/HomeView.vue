@@ -46,6 +46,7 @@
      async fetchCovidData(){
        const res = await fetch('https://api.covid19api.com/summary')
        const data = await res.json()
+       console.log(data)
        return data
      }
    },
@@ -55,7 +56,7 @@
      const data = await this.fetchCovidData()
      this.dataDate = data.Date
      this.stats = data.Global
-     this.countries = data.countries
+     this.countries = data.Countries
      this.loading = false
    }
 }
