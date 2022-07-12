@@ -7,7 +7,8 @@
 
     <CountrySelect @get-country="getCountryData" :countries="countries" />
 
-    <button v-if="stats.Country"
+    <button @click="clearCountryData"
+      v-if="stats.Country"
       class="bg-green-700 text-white rounded p-3 mt-10 focus:outline-none hover:bg-green-600"
     >
       Clear Country
@@ -58,6 +59,13 @@
      getCountryData(country){
       this.stats = country 
       this.title = country.Country
+     },
+     async clearCountryData(){
+      this.loading = true
+      const data = await this.fetchCovidData()
+      this.title = 'Global'
+      this.stats = data.Global
+      this.loading = false
      }
    },
    //runs before the Virtual DOM is mounted and after the component is intialized 
