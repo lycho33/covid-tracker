@@ -1,28 +1,5 @@
 <template>
-  <!-- if the loading is false, then render this -->
-  <main  v-if="!loading" class="home">
-    <DataTitle :text="title" :dataDate="dataDate" />
 
-    <DataBoxes :stats="stats" />
-
-    <CountrySelect @get-country="getCountryData" :countries="countries" />
-
-    <button @click="clearCountryData"
-      v-if="stats.Country"
-      class="bg-green-700 text-white rounded p-3 mt-10 focus:outline-none hover:bg-green-600"
-    >
-      Clear Country
-    </button>
-  </main>
-
-  <main v-else class="flex flex-col align-center justify-center text-center">
-    <!-- mt: margin-top -->
-    <div class="text-gray-500 text-3xl mt-10 mb-6">
-      Fetching Data
-    </div>
-    <!-- w: width, m: margin -->
-    <img :src="loadingImage" class="w-24 m-auto" alt="">
-  </main>
 </template>
 
 
@@ -41,41 +18,9 @@
    data(){
      //these are all your variables/STATE
      return {
-       loading: true,
-       title: 'Global',
-       dataDate: '',
-       status: {},
-       countries: [],
-       loadingImage: require('../assets/blue-hourglass.gif'),
      }
    },
    methods: {
-     async fetchCovidData(){
-       const res = await fetch('https://api.covid19api.com/summary')
-       const data = await res.json()
-       console.log(data)
-       return data
-     },
-     getCountryData(country){
-      this.stats = country 
-      this.title = country.Country
-     },
-     async clearCountryData(){
-      this.loading = true
-      const data = await this.fetchCovidData()
-      this.title = 'Global'
-      this.stats = data.Global
-      this.loading = false
-     }
    },
-   //runs before the Virtual DOM is mounted and after the component is intialized 
-   async created(){
-     console.log("created")
-     const data = await this.fetchCovidData()
-     this.dataDate = data.Date
-     this.stats = data.Global
-     this.countries = data.Countries
-     this.loading = false
-   }
 }
 </script>
