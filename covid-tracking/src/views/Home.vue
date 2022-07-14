@@ -12,6 +12,17 @@
    name: 'Home',
    components: {
    },
+   methods: {
+    async fetchCovidData(){
+      const res = await fetch('https://api.covid19api.com/summary')
+      const data = await res.json()
+      return data
+    }
+   },
+   //lifecycle method
+   created(){
+    console.log(123)
+   },
    data(){
      //these are all your variables/STATE
      return {
