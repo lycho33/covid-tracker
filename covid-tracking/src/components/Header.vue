@@ -1,5 +1,11 @@
 <template>
-  <h1>working?</h1>
+  <header class="text-center bg-blue-800 p-4 mb-10 text-white">
+    <div 
+      class="text-3xl md:text-5xl font-bold mb-3"
+    >
+      COVID TRACKER
+    </div>
+  </header>
 </template>
 
 <script>
