@@ -5,30 +5,19 @@
 
 
 <script>
-  // import DataTitle from '../components/DataTitle.vue'
-  // import DataBoxes from '../components/DataBoxes.vue'
-  // import CountrySelect from '../components/CountrySelect.vue'
   export default {
    name: 'Home',
-   components: {
-   },
+   components: {},
    methods: {
     async fetchCovidData(){
       const res = await fetch('https://api.covid19api.com/summary')
-      const data = await res.json()
+      const data = res.json()
       return data
     }
    },
-   //lifecycle method
-   created(){
-    console.log(123)
-   },
-   data(){
-     //these are all your variables/STATE
-     return {
-     }
-   },
-   methods: {
-   },
+  async created(){
+    const data = await this.fetchCovidData()
+    console.log(data)
+  }
 }
 </script>
