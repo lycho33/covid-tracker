@@ -5,6 +5,7 @@
     >
       COVID TRACKER
     </div>
+    <p>API by <a class="text-red-600 font-bold" href="https://covid19api.com/" target="_blank">COVID19 API</a></p>
   </header>
 </template>
 
