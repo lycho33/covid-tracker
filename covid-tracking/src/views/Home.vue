@@ -1,6 +1,6 @@
 <template>
   <main v-if='!loading'>
-    Show Data
+    <DataTitle :text="title" :dataDate="dataDate"/>
   </main>
 
   <main
@@ -17,9 +17,12 @@
 
 
 <script>
+  import DataTitle from '../components/DataTitle.vue'
   export default {
    name: 'Home',
-   components: {},
+   components: {
+    DataTitle
+   },
    data(){
     return {
       loading: true,
@@ -40,7 +43,7 @@
   async created(){
     const data = await this.fetchCovidData()
     console.log(data)
-    this.dataDate = data.dataDate
+    this.dataDate = data.Date
     this.stats = data.Global
     this.countries = data.Countries
     this.loading = false
