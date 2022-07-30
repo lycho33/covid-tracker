@@ -1,5 +1,17 @@
 <template>
-  <h1>HOME Page</h1>
+  <main v-if='!loading'>
+    Show Data
+  </main>
+
+  <main
+    class="flex flex-col align-center justify-center text-center" 
+    v-else
+  >
+    <div class="tedxt-gra-500 text-3xl mt-10 mb-6">
+      Fetching Data
+    </div>
+    <img :src="loadingImage" class="w-24 m-auto">
+  </main>
 </template>
 
 
