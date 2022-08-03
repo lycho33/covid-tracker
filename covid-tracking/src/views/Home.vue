@@ -12,6 +12,8 @@
     </div>
     <img :src="loadingImage" class="w-24 m-auto">
   </main>
+
+  <DataBoxes :stats="stats"/>
 </template>
 
 
@@ -24,7 +26,8 @@
   export default {
    name: 'Home',
    components: {
-    DataTitle
+    DataTitle,
+    DataBoxes
    },
    data(){
     return {
@@ -42,9 +45,6 @@
       const data = res.json()
       return data
     },
-    arrangeDate(){
-
-    }
    },
   async created(){
     const data = await this.fetchCovidData()
