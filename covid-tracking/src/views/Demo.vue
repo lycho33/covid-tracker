@@ -6,7 +6,6 @@
 export default {
     name: 'Demo',
     components: {
-
     },
 }
 </script>
