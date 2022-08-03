@@ -17,7 +17,10 @@
 
 
 <script>
+
   import DataTitle from '../components/DataTitle.vue'
+  import DataBoxes from '../components/DataBoxes.vue'
+
   export default {
    name: 'Home',
    components: {
@@ -40,7 +43,7 @@
       return data
     },
     arrangeDate(){
-      
+
     }
    },
   async created(){
