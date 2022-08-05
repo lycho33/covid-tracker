@@ -1,7 +1,6 @@
 <template>
   <div>
     <main v-if='loading === false'>
-      {{loading}}
       <DataTitle :text="title" :dataDate="dataDate"/>
     </main>
 

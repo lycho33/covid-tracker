@@ -1,10 +1,16 @@
 <template>
     <div>
         <h1>Demo Page</h1>
-        <button 
+        <button @click="color"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
-        Click me
+        I'm blue
+        {{this.buttonAppreance}}
+        </button>
+        <button 
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        >
+        Now I'm red
         </button>
     </div>
 </template>
@@ -14,5 +20,15 @@ export default {
     name: 'Demo',
     components: {
     },
+    data(){
+        return {
+            buttonAppreance: true,
+        }
+    },
+    methods: {
+        color(event){
+            this.buttonAppreance = !this.buttonAppreance;
+        }
+    }
 }
 </script>
