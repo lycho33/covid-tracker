@@ -22,12 +22,14 @@
 
   import DataTitle from '../components/DataTitle.vue'
   import DataBoxes from '../components/DataBoxes.vue'
+  import CountrySelect from '../components/CountrySelect.vue'
 
   export default {
    name: 'Home',
    components: {
     DataTitle,
-    DataBoxes
+    DataBoxes,
+    CountrySelect,
    },
    data(){
     return {
