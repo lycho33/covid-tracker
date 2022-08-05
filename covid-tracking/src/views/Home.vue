@@ -1,20 +1,22 @@
 <template>
-  <main v-if='!loading'>
-    <DataTitle :text="title" :dataDate="dataDate"/>
-  </main>
+  <div>
+    <main v-if='loading === false'>
+      {{loading}}
+      <DataTitle :text="title" :dataDate="dataDate"/>
+    </main>
 
-  <main
-    v-else
-    class="flex flex-col align-center justify-center text-center" 
-  >
-    <h3>testing</h3>
-    <!-- <div class="tedxt-gra-500 text-3xl mt-10 mb-6">
-      Fetching Data
-    </div>
-    <img :src="loadingImage" class="w-24 m-auto"> -->
-  </main>
+    <main
+      v-else-if="loading === true"
+      class="flex flex-col text-center" 
+    >
+      <div class="text-gray-500 text-3xl mt-10 mb-6">
+        Fetching Data
+      </div>
+      <img :src="loadingImage" class="w-24 m-auto">
+    </main>
 
-  <DataBoxes :stats="stats"/>
+    <DataBoxes :stats="stats"/>
+  </div>
 </template>
 
 
