@@ -4,13 +4,14 @@
   </main>
 
   <main
-    class="flex flex-col align-center justify-center text-center" 
     v-else
+    class="flex flex-col align-center justify-center text-center" 
   >
-    <div class="tedxt-gra-500 text-3xl mt-10 mb-6">
+    <h3>testing</h3>
+    <!-- <div class="tedxt-gra-500 text-3xl mt-10 mb-6">
       Fetching Data
     </div>
-    <img :src="loadingImage" class="w-24 m-auto">
+    <img :src="loadingImage" class="w-24 m-auto"> -->
   </main>
 
   <DataBoxes :stats="stats"/>
