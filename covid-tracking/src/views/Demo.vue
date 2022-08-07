@@ -15,6 +15,7 @@
         >
         Now I'm red
         </button>
+        <button>Test</button>
     </div>
 </template>
 
