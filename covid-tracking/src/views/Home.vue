@@ -15,7 +15,7 @@
     </main>
 
     <DataBoxes :stats="stats"/>
-    <CountrySelect :countries="countries"/>
+    <CountrySelect :countries="countries" @get-country="getCountryData"/>
 
   </div>
 </template>

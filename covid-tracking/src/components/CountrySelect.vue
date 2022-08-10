@@ -2,6 +2,7 @@
     <div>
         <h1>Country Selections~!</h1>
         <select 
+            @change="onChange()"
             v-model="selected"
             class="form-select mt-10 block w-full border p-3 rounded"
         >
@@ -23,6 +24,13 @@
         data(){
             return {
                 selected: 0,
+            }
+        },
+        methods: {
+            onChange(){
+                const country = this.countries.find((c) => c.ID === this.selected)
+                console.log(country)
+                this.$emit('get-country', country)
             }
         }
     }
