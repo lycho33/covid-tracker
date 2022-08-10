@@ -16,6 +16,8 @@
         Now I'm red
         </button>
         <button>Test</button>
+        <h1>Extra stuff</h1>
+        <h3>lalalalaa</h3>
     </div>
 </template>
 
