@@ -29,7 +29,6 @@
         methods: {
             onChange(){
                 const country = this.countries.find((c) => c.ID === this.selected)
-                console.log(country)
                 this.$emit('get-country', country)
             }
         }
