@@ -1,9 +1,13 @@
 <template>
-    <h1>Country Selections~!</h1>
-    <label for="countries">Select a Country</label>
-    <select v-model="selected">
-
-    </select>
+    <div>
+        <h1>Country Selections~!</h1>
+        <select 
+            v-model="selected"
+            class="form-select mt-10 block w-full border p-3 rounded"
+        >
+            <option value="0">Select Country</option>
+        </select>
+    </div>
 </template>
 
 <script>
