@@ -15,6 +15,8 @@
     </main>
 
     <DataBoxes :stats="stats"/>
+    <CountrySelect :countries="countries"/>
+
   </div>
 </template>
 
