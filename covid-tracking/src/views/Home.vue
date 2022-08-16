@@ -51,6 +51,11 @@
       const data = res.json()
       return data
     },
+    getCountryData(country){
+      console.log(country)
+      this.stats = country
+      this.title = country.Country
+    },
    },
   async created(){
     const data = await this.fetchCovidData()
